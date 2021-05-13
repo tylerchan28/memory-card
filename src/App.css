@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "rmfont";
+    src: local("rmfont"), url(./fonts/get_schwifty.ttf) format("truetype")
+}
+
+body {
+    background: url("./images/rm-bg.jpeg");
+    background-size: 100% 100%;
+}
+
+button {
+    background-color: lightblue; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(155, 194, 206)
+}
+
+/* Header */
+.header-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-family: "rmfont";
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+}
+
+.message-text {
+    color: red;
+    font-size: 24px;
+    margin: 0
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    position: absolute;
+    left: 80px;
+}
+
+/* Card */
+.image-text {
+    border-top: 1px solid black;
+    font-family: "rmfont";
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+
+/* Cards */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}

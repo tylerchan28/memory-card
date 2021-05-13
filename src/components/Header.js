@@ -1,12 +1,13 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({ score, hiscore, message }) => {
     return (
-        <div>
+        <div class="header-container">
             <h1>Memory game</h1>
-            <div>
-                <p>Current Score: </p>
-                <p>Hi-score: </p>
+            <p className="message-text">{message}</p>
+            <div className="score-container">
+                <p>Current Score: {score} </p>
+                <p>Hi-score: {hiscore}</p>
             </div>
         </div>
     )

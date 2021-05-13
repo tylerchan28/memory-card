@@ -1,10 +1,15 @@
 import React from "react";
 
-const CharacterCard = ({imageSource, cardName }) => {
+const CharacterCard = ( { card, logic }) => {
     return (
-        <button>
-            <img>{imageSource}</img>
-            <p>{cardName}</p>
+        <button onClick={() => logic(card.name)}>
+            <img 
+                src={card.src}
+                width="280"
+                height="300"
+                alt={card.name}
+            />
+            <p className="image-text">{card.name}</p>
         </button>
     )
 }
