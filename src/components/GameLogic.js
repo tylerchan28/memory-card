@@ -10,16 +10,19 @@ const GameLogic = () => {
     
     const addScore = () => {
         setScore(score + 1)
+        if (score === 11) {
+            setMessage("You won the game!");
+            setChosenCards([]);
+            setHiscore(12);
+            setScore(0);
+        }
     }
+    
 
     const addHiscore = () => {
         if (score > hiscore) {
             setHiscore(score);
         }
-    }
-
-    const addLosingMessage = () => {
-        setMessage("You lost! Click on a card to try again!")
     }
 
     const pickCard = (card) => {
@@ -28,14 +31,14 @@ const GameLogic = () => {
     
     const logic = (card) => {
         if (!chosenCards.includes(card)) {
+            setMessage("");
             pickCard(card);
             addScore();
-            setMessage("");
         } else {
             addHiscore()
             setScore(0)
             setChosenCards([]);
-            addLosingMessage();
+            setMessage("You lost! Click on a card to try again!")
         }
     }
 
